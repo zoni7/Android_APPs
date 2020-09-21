@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">CalculApp</string>
+    <string name="txt_num1">Ingresa el primer valor</string>
+    <string name="txt_num2">Ingresa el segundo valor</string>
+    <string name="txt_view">Resultado de la operación</string>
+    <string name="rb1">Sumar</string>
+    <string name="rb2">Restar</string>
+    <string name="Button">Calcular</string>
+</resources>
