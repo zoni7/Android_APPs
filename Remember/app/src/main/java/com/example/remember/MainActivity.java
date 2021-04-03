@@ -2,12 +2,12 @@ package com.example.remember;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.DatePickerDialog;
 import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
 import android.support.v4.app.NotificationCompat;
@@ -18,6 +18,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -27,9 +28,13 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
+import java.time.Month;
+import java.time.Year;
+import java.time.YearMonth;
 import java.util.ArrayList;
+import java.util.Calendar;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements DatePickerDialog.OnDateSetListener{
     private Button boton;
     private EditText txt;
     private ArrayList<String> itemlist;
@@ -39,9 +44,13 @@ public class MainActivity extends AppCompatActivity {
     private PendingIntent pendingIntent;
     private final static String CHANNEL_ID = "NOTIFICACION";
     private int NOTIFICACION_ID = 0; // number for creating more than one notifications
+    // atribute to store the dates from the tags
+    private String date = "";
 
 
     @Override
+
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -82,19 +91,38 @@ public class MainActivity extends AppCompatActivity {
         list.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, final int  position, long id) {
-                onListItemPressed(position);
+                onListItemLongPressed(position);
                 return true;
             }
         });
+        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+
+                    try {
+                        onListItemPressed(position);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    createNotificationChannel();
+                    createNotification(itemlist.get(position), date);
+
+
+            }
+        });
+
 
     }
 
+
+
     // method private to complete method "crearEtiqueta", this method is necessary
-    private void createNotification() {
+    private void createNotification(String tag ,String date) {
         NotificationCompat.Builder builder = new NotificationCompat.Builder(getApplicationContext(), CHANNEL_ID);
         builder.setSmallIcon(R.drawable.ic_turned_in_black_24dp);
-        builder.setContentTitle("Your awesome tag");
-        builder.setContentText(txt.getText().toString());
+        builder.setContentTitle(tag);
+        builder.setContentText(date);
         builder.setColor(Color.BLUE);
         builder.setPriority(NotificationCompat.PRIORITY_HIGH);
         builder.setDefaults(Notification.DEFAULT_SOUND);
@@ -118,16 +146,17 @@ public class MainActivity extends AppCompatActivity {
     /**
      * Method to create the Tag pushing the Main Button
      * @param view
+     * @return
      */
     public void crearEtiqueta(View view) {
+
         if (!txt.getText().toString().isEmpty()) {
             String etiqueta = txt.getText().toString();
             itemlist.add(itemlist.size(), etiqueta);
             Guardar();
             Toast.makeText(this, "new Tag PRO ", Toast.LENGTH_SHORT).show();
 
-            createNotificationChannel();
-            createNotification();
+
         }
     }
 
@@ -173,7 +202,7 @@ public class MainActivity extends AppCompatActivity {
     /**
      *Method to ask if deleting data is needed
      */
-    public void onListItemPressed(final int position) {
+    public void onListItemLongPressed(final int position) {
         AlertDialog.Builder myBuild = new AlertDialog.Builder(this);
         myBuild.setMessage("Are you sure you want to delete this ?");
         myBuild.setTitle("Delete");
@@ -195,6 +224,30 @@ public class MainActivity extends AppCompatActivity {
 
         AlertDialog dialog = myBuild.create();
         dialog.show();
+
+    }
+    /**
+     *Method to ask a date to end the task
+     */
+    public void onListItemPressed(final int position) throws InterruptedException {
+        DatePickerDialog datePickerDialog = new DatePickerDialog(this, this,
+                Calendar.getInstance().get(Calendar.YEAR),
+                Calendar.getInstance().get(Calendar.MONTH),
+                Calendar.getInstance().get(Calendar.DAY_OF_MONTH)
+
+        );
+
+        datePickerDialog.show();
+
+
+
+    }
+
+    /**
+     *This method stores de date selected by the user at the general atribute "date"
+     */
+    public  void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+        date =  year + "/" + (month + 1) + "/" + dayOfMonth;
 
     }
 

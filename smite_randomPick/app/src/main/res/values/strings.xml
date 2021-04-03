@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">RandomPick</string>
+    <string name="app_name">Random Pick</string>
     <string name="btn_guardian">Guardian</string>
     <string name="btn_warrior">Warrior</string>
     <string name="btn_assassin">Assassin</string>
