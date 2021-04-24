@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView txt;
 
     private String [] guardians = {"Ares", "Baco", "Atenea", "Sobek", "Geb", "Silvano", "Ymir", "Cabrakan", "Jepri" , "Xing Tian", "Cerberus" , "Cthulhu" , "Kuzembo" , "Yemoja" , "Fafnir" , "Ganesha" , "Jormungander", "Terra", "Kumbhákarna", "Artio"};
-    private String [] warriors = {"Sun Wukong", "Chaac", "Guan Yu", "Belona", "Tyr", "Amaterusa", "Hércules", "Odín" , "Osiris", "Vámana", "Nike", "King Arthur", "Erlang Shen", "Cu Chulainn", "Achiles", "Mulan", "Horus"};
+    private String [] warriors = {"Gilgamesh","Sun Wukong", "Chaac", "Guan Yu", "Belona", "Tyr", "Amaterusa", "Hércules", "Odín" , "Osiris", "Vámana", "Nike", "King Arthur", "Erlang Shen", "Cu Chulainn", "Achiles", "Mulan", "Horus"};
     private String [] assasins = {"Tsukuyomi","Loki", "Fenrir", "Awilix", "Ratatoskr", "Mercurio", "Hun Batz", "Nemesis", "Aracne", "Bakasura", "Bastet", "Thor", "Kali", "Ze Zha", "Ravana", "set", "Thanatos","Camazotz", "Da ji", "Pele", "Serqet", "Susano" };
     private String [] mages = {"Tiamat","Ao Kuang", "Agni", "Afrodita", "Zeus", "Anubis", "Ra", "Cronos", "Isis", "Kukulkan", "Ah Puch", "Hel", "Freya", "Jano", "Nox", "Hades", "Nu Wa", "Poseidon", "Vulcano", "Change", "Escila", "He Bo", "Raijin", "Sol", "Baba Yaga", "Baron Samedi", "Discordia", "Merlin", "Olorun", "Persephone", "The Morrigan", "Thoth", "Hera" } ;
     private String [] hunters = {"Apolo", "Ah Muzen Cab", "Hou Yi", "Neith", "Anhur", "Artemisa", "Cupido", "Xbalanque", "Medusa", "Skadi", "Rama", "Quiron", "Ullr", "Cernunnos", "Hachiman", "Heimdallr", "Chernobog", "Izanami", "Jing Wei", "Danzaburou"};
@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
             "Achiles", "Mulan", "Horus", "Loki", "Fenrir", "Awilix", "Ratatoskr", "Mercurio", "Hun Batz", "Nemesis", "Aracne", "Bakasura", "Bastet", "Thor", "Kali", "Ze Zha", "Ravana", "set", "Thanatos","Camazotz",
             "Da ji", "Pele", "Serqet", "Susano", "Ao Kuang", "Agni", "Afrodita", "Zeus", "Anubis", "Ra", "Cronos", "Isis", "Kukulkan", "Ah Puch", "Hel", "Freya", "Jano", "Nox", "Hades", "Nu Wa", "Poseidon", "Vulcano",
             "Change", "Escila", "He Bo", "Raijin", "Sol", "Baba Yaga", "Baron Samedi", "Discordia", "Merlin", "Olorun", "Persephone", "The Morrigan", "Thoth", "Hera" , "Apolo", "Ah Muzen Cab", "Hou Yi", "Neith", "Anhur",
-            "Artemisa", "Cupido", "Xbalanque", "Medusa", "Skadi", "Rama", "Quiron", "Ullr", "Cernunnos", "Hachiman", "Heimdallr", "Chernobog", "Izanami", "Jing Wei","Danzaburou", "Tiamat"
+            "Artemisa", "Cupido", "Xbalanque", "Medusa", "Skadi", "Rama", "Quiron", "Ullr", "Cernunnos", "Hachiman", "Heimdallr", "Chernobog", "Izanami", "Jing Wei","Danzaburou", "Tiamat", "Gilgamesh"
     }; ;
 
 
