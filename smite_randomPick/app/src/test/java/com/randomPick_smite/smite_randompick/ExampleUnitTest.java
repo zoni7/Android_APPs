@@ -1,4 +1,4 @@
-package com.example.smite_randompick;
+package com.randomPick_smite.smite_randompick;
 
 import org.junit.Test;
 
