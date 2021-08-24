@@ -14,8 +14,8 @@
         android:layout_marginStart="40dp"
         android:layout_marginTop="20dp"
         android:background="@drawable/roundedbutton"
-        android:onClick="generarGuardian"
         android:text="@string/btn_guardian"
+        android:textColor="#FFFFFF"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
@@ -26,8 +26,8 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="40dp"
         android:background="@drawable/roundedbutton"
-        android:onClick="generarWarrior"
         android:text="@string/btn_warrior"
+        android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
@@ -38,8 +38,8 @@
         android:layout_marginStart="40dp"
         android:layout_marginTop="20dp"
         android:background="@drawable/roundedbutton"
-        android:onClick="generarMage"
         android:text="@string/btn_mage"
+        android:textColor="#FFFFFF"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView3" />
 
@@ -50,8 +50,8 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="40dp"
         android:background="@drawable/roundedbutton"
-        android:onClick="generarHunter"
         android:text="@string/btn_hunter"
+        android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView5" />
 
@@ -63,8 +63,8 @@
         android:layout_marginTop="100dp"
         android:layout_marginEnd="162dp"
         android:background="@drawable/roundedbutton"
-        android:onClick="generarAnyRole"
         android:text="@string/btn_any_role"
+        android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_assassin" />
@@ -77,8 +77,8 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="34dp"
         android:background="@drawable/roundedbutton"
-        android:onClick="generarAssessin"
         android:text="@string/btn_assassin"
+        android:textColor="#FFFFFF"
         app:layout_constraintEnd_toStartOf="@+id/imageView5"
         app:layout_constraintStart_toEndOf="@+id/imageView3"
         app:layout_constraintTop_toBottomOf="@+id/imageView4" />
